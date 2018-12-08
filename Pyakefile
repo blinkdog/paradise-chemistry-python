@@ -1,0 +1,77 @@
+# Pyakefile
+# Copyright 2018 Patrick Meade.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# ---------------------------------------------------------------------------
+
+import subprocess
+import webbrowser
+
+
+# ---------------------------------------------------------------------------
+def build():
+    pass
+
+
+def clean():
+    subprocess.run(["rm", "-fr", ".pytest_cache"])
+    subprocess.run(["rm", "-fr", "htmlcov"])
+    subprocess.run(["find", "-name", "__pycache__", "-exec", "rm", "-fr", "{}", "+"])
+    subprocess.run(["rm", "-f", ".coverage"])
+
+
+def coverage():
+    subprocess.run(["py.test", "--cov=src", "--cov-config=setup.cfg", "--cov-report", "html:htmlcov", "--no-cov-on-fail", "test"], check=True)
+    webbrowser.open_new_tab("htmlcov/index.html")
+
+
+def test():
+    subprocess.run(["py.test", "test"], check=True)
+
+
+# ---------------------------------------------------------------------------
+def doCheckTask():
+    # https://stackoverflow.com/a/27239645
+    raise NotImplementedError("Need to implement task 'check'")
+
+
+def doCleanTask():
+    clean()
+
+
+def doCoverageTask():
+    clean()
+    build()
+    coverage()
+
+
+def doLintTask():
+    raise NotImplementedError("Need to implement task 'lint'")
+
+
+def doRebuildTask():
+    clean()
+    build()
+    test()
+
+
+# ---------------------------------------------------------------------------
+task("check",    "Check dependency versions",      doCheckTask)
+task("clean",    "Remove build cruft",             doCleanTask)
+task("coverage", "Perform test coverage analysis", doCoverageTask)
+task("lint",     "Run code quality analysis",      doLintTask)
+task("rebuild",  "Rebuild the module",             doRebuildTask)
+
+# ---------------------------------------------------------------------------
+# end of Pyakefile
