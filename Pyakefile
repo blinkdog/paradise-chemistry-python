@@ -26,7 +26,10 @@ def build():
 
 def clean():
     subprocess.run(["rm", "-fr", ".pytest_cache"])
+    subprocess.run(["rm", "-fr", "build"])
+    subprocess.run(["rm", "-fr", "dist"])
     subprocess.run(["rm", "-fr", "htmlcov"])
+    subprocess.run(["rm", "-fr", "paradise_chemistry.egg-info"])
     subprocess.run(["find", "-name", "__pycache__", "-exec", "rm", "-fr", "{}", "+"])
     subprocess.run(["rm", "-f", ".coverage"])
 
@@ -34,6 +37,10 @@ def clean():
 def coverage():
     subprocess.run(["py.test", "--cov=src", "--cov-config=setup.cfg", "--cov-report", "html:htmlcov", "--no-cov-on-fail", "test"], check=True)
     webbrowser.open_new_tab("htmlcov/index.html")
+
+
+def dist():
+    subprocess.run(["python3", "setup.py", "sdist", "bdist_wheel"])
 
 
 def test():
@@ -56,6 +63,13 @@ def doCoverageTask():
     coverage()
 
 
+def doDistTask():
+    clean()
+    build()
+    test()
+    dist()
+
+
 def doLintTask():
     raise NotImplementedError("Need to implement task 'lint'")
 
@@ -70,6 +84,7 @@ def doRebuildTask():
 task("check",    "Check dependency versions",      doCheckTask)
 task("clean",    "Remove build cruft",             doCleanTask)
 task("coverage", "Perform test coverage analysis", doCoverageTask)
+task("dist",     "Create a distribution tarball",  doDistTask)
 task("lint",     "Run code quality analysis",      doLintTask)
 task("rebuild",  "Rebuild the module",             doRebuildTask)
 

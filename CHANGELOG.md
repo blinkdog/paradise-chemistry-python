@@ -18,8 +18,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Security
 - in case of vulnerabilities
 
+## [0.0.2] - 2018-12-08
+### Added
+- pyake task 'dist' to create distribution tarballs
+
 ## 0.0.1 - 2018-12-08
 ### Added
 - Initial project structure
 
-[Unreleased]: https://github.com/blinkdog/paradise-chemistry-python/compare/v0.0.1...HEAD
+[Unreleased]: https://github.com/blinkdog/paradise-chemistry-python/compare/v0.0.2...HEAD
+[0.0.2]: https://github.com/blinkdog/paradise-chemistry-python/compare/v0.0.1...v0.0.2
