@@ -96,7 +96,7 @@ def test_flatten():
 
 
 def test_recipe_length():
-    NUM_CHEM_RECIPES = 6
+    NUM_CHEM_RECIPES = 9
     assert len(CHEM_RECIPES) == NUM_CHEM_RECIPES, "There are %d chem recipes (expected %d)." % (len(CHEM_RECIPES), NUM_CHEM_RECIPES)
 
 
@@ -261,12 +261,15 @@ def test_stepsFor_unknown():
 def test_stoichiometry_unusual():
     assert inCount("ammonia") != outCount("ammonia")
     assert inCount("ash") != outCount("ash")
+    assert inCount("saltpetre") != outCount("saltpetre")
+    assert inCount("sulphuric acid") != outCount("sulphuric acid")
 
 
 def test_stoichiometry_usual():
     assert inCount("acetone") == outCount("acetone")
     assert inCount("diethylamine") == outCount("diethylamine")
     assert inCount("oil") == outCount("oil")
+    assert inCount("phenol") == outCount("phenol")
     assert inCount("space lube") == outCount("space lube")
 
 

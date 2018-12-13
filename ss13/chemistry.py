@@ -117,6 +117,45 @@ CHEM_RECIPES = {
         "verified": True
     },
 
+    "phenol": {
+        "desc": "Used for certain medical recipes.",
+        "in": {
+            "chlorine": 1,
+            "oil": 1,
+            "water": 1
+        },
+        "out": {
+            "phenol": 3
+        },
+        "verified": True
+    },
+
+    "saltpetre": {
+        "desc": "Ingredient for Bath Salts and Black Powder.",
+        "in": {
+            "nitrogen": 1,
+            "oxygen": 3,
+            "potassium": 1
+        },
+        "out": {
+            "saltpetre": 3
+        },
+        "verified": True
+    },
+
+    "sulphuric acid": {
+        "desc": "An acid that's utilized as a building block in a lot of medical chemicals. It's also useful for etching circuits....etching permanent scars in your coworker's face.",
+        "in": {
+            "hydrogen": 1,
+            "oxygen": 1,
+            "sulfur": 1
+        },
+        "out": {
+            "sulphuric acid": 2
+        },
+        "verified": True
+    },
+
     "space lube": {
         "desc": "Space Lube is a high performance lubricant intended for maintenance of extremely complex mechanical equipment.",
         "in": {

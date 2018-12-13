@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="paradise-chemistry",
-    version="0.0.3",
+    version="0.0.4",
     author="Patrick Meade",
     author_email="blinkdog@protonmail.com",
     license="AGPL-3.0-or-later",

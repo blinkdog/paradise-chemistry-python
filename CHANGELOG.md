@@ -18,6 +18,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Security
 - in case of vulnerabilities
 
+## [0.0.4] - 2018-12-13
+### Added
+- Verified chemical recipes for "Components"
+- See: https://nanotrasen.se/wiki/index.php/Guide_to_Chemistry#Components
+
 ## [0.0.3] - 2018-12-13
 ### Added
 - coverage exclusion for the command-line portion of scripts
@@ -41,6 +46,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial project structure
 
-[Unreleased]: https://github.com/blinkdog/paradise-chemistry-python/compare/v0.0.3...HEAD
+[Unreleased]: https://github.com/blinkdog/paradise-chemistry-python/compare/v0.0.4...HEAD
+[0.0.4]: https://github.com/blinkdog/paradise-chemistry-python/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/blinkdog/paradise-chemistry-python/compare/v0.0.2...v0.0.3
 [0.0.2]: https://github.com/blinkdog/paradise-chemistry-python/compare/v0.0.1...v0.0.2
