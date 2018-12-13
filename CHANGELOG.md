@@ -18,6 +18,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Security
 - in case of vulnerabilities
 
+## [0.0.3] - 2018-12-13
+### Added
+- coverage exclusion for the command-line portion of scripts
+- license field to setup.py metadata
+- ss13 module
+- chemistry.py script to ss13 module
+- unit tests for ss13/chemistry in test_chemistry.py
+### Changed
+- Cleaned up some tasks in the Pyakefile
+- Updated development environment setup instructions in README.md
+### Removed
+- Most of requirements.txt; it was incorrectly generated before
+- src module along with demo function square
+- test directory along with demo test_square
+
 ## [0.0.2] - 2018-12-08
 ### Added
 - pyake task 'dist' to create distribution tarballs
@@ -26,5 +41,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial project structure
 
-[Unreleased]: https://github.com/blinkdog/paradise-chemistry-python/compare/v0.0.2...HEAD
+[Unreleased]: https://github.com/blinkdog/paradise-chemistry-python/compare/v0.0.3...HEAD
+[0.0.3]: https://github.com/blinkdog/paradise-chemistry-python/compare/v0.0.2...v0.0.3
 [0.0.2]: https://github.com/blinkdog/paradise-chemistry-python/compare/v0.0.1...v0.0.2

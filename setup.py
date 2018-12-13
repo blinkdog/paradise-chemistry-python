@@ -5,9 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="paradise-chemistry",
-    version="0.0.2",
+    version="0.0.3",
     author="Patrick Meade",
     author_email="blinkdog@protonmail.com",
+    license="AGPL-3.0-or-later",
     description="Helper program for Chemistry on Paradise Station (SS13)",
     long_description=long_description,
     long_description_content_type="text/markdown",

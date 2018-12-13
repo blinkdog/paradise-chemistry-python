@@ -30,21 +30,22 @@ def clean():
     subprocess.run(["rm", "-fr", "dist"])
     subprocess.run(["rm", "-fr", "htmlcov"])
     subprocess.run(["rm", "-fr", "paradise_chemistry.egg-info"])
-    subprocess.run(["find", "-name", "__pycache__", "-exec", "rm", "-fr", "{}", "+"])
+    subprocess.run(["find", "ss13", "-name", "__pycache__", "-exec", "rm", "-fr", "{}", "+"])
+    subprocess.run(["find", "tests", "-name", "__pycache__", "-exec", "rm", "-fr", "{}", "+"])
     subprocess.run(["rm", "-f", ".coverage"])
 
 
 def coverage():
-    subprocess.run(["py.test", "--cov=src", "--cov-config=setup.cfg", "--cov-report", "html:htmlcov", "--no-cov-on-fail", "test"], check=True)
+    subprocess.run(["pytest", "--cov=ss13", "--cov-config=setup.cfg", "--cov-report=html", "--no-cov-on-fail", "tests"], check=True)
     webbrowser.open_new_tab("htmlcov/index.html")
 
 
 def dist():
-    subprocess.run(["python3", "setup.py", "sdist", "bdist_wheel"])
+    subprocess.run(["python", "setup.py", "sdist", "bdist_wheel"])
 
 
 def test():
-    subprocess.run(["py.test", "test"], check=True)
+    subprocess.run(["pytest", "tests"], check=True)
 
 
 # ---------------------------------------------------------------------------
